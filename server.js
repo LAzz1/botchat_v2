@@ -29,6 +29,6 @@ client.connect();
 client.on('message', (channel, user, msg, self) => {
     if (self) return;
     try {
-        client.say(channel, channelValidation.wichChannel(channel, user, msg))
+        client.say(channel, channelValidation.whichChannel(channel, user, msg))
     } catch (e) { return }
 })

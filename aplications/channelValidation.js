@@ -3,7 +3,7 @@ var brunoChannel = require('../channels/brunotss11')
 var shadowChannel = require('../channels/shadowx012')
 var correaChannel = require('../channels/correaaaxd')
 
-function wichChannel(channel, user, msg) {
+function whichChannel(channel, user, msg) {
     if (channel.includes('marsalo')) {
         return marsaloChannel.validation(channel, user, msg)
     }
@@ -21,4 +21,4 @@ function wichChannel(channel, user, msg) {
     }
 }
 
-module.exports = { wichChannel }
+module.exports = { whichChannel }

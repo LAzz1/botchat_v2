@@ -46,7 +46,7 @@ function deleteCommand(channel, user, msg, arrQuestion, arrAnswer) {
                 return `O comando ${splitedMsg[1]} foi removido! BloodTrail`
             }
             else {
-                return 'Não achamos nenhum comando com esse nome para removelo FBtouchdown'
+                return 'Não achamos nenhum comando com esse nome para remove-lo FBtouchdown'
             }
         }
         else {
