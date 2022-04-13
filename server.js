@@ -19,7 +19,7 @@ files.forEach((z) => {
 const opts = {
     identity: {
         username: 'Bot_marsalo',
-        password: dot.botToken
+        password: process.env.botToken
     },
     channels: channelsNames
 }
