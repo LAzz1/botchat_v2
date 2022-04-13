@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "csvtojson": "^2.0.10",
+    "dotenv": "^16.0.0",
+    "fs": "^0.0.1-security",
+    "json2csv": "^5.0.7",
+    "localbase": "^0.7.5",
+    "path": "^0.12.7",
+    "tmi.js": "^1.8.5"
+  }
+}
