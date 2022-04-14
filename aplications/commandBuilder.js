@@ -11,7 +11,7 @@ function createCommand(channel, user, msg, arrQuestion, arrAnswer) {
                 }
             }
             var newCommand = splitedMsg[1]
-            arrQuestion[arrQuestion.length] = newCommand
+            arrQuestion[arrQuestion.length] = newCommand.toLowerCase()
             splitedMsg[0] = ' '
             splitedMsg[1] = ' '
             var newAnswer = splitedMsg.join(' ').trim()
@@ -34,20 +34,16 @@ function deleteCommand(channel, user, msg, arrQuestion, arrAnswer) {
         var splitedMsg = msg.split(' ')
 
         if (splitedMsg.length > 1) {
-            var commandExist = false
             for (var i = 0; i < arrQuestion.length; i++) {
-                if (splitedMsg[1] == arrQuestion[i]) {
+                if (splitedMsg[1].toLowerCase() == arrQuestion[i]) {
                     arrQuestion.splice(i, 1)
                     arrAnswer.splice(i, 1)
                     commandExist = true
+                    return `O comando ${splitedMsg[1]} foi removido! BloodTrail`
                 }
             }
-            if (commandExist === true) {
-                return `O comando ${splitedMsg[1]} foi removido! BloodTrail`
-            }
-            else {
-                return 'Não achamos nenhum comando com esse nome para remove-lo FBtouchdown'
-            }
+            return 'Não achamos nenhum comando com esse nome para remove-lo FBtouchdown'
+
         }
         else {
             return 'O comando está sendo usado de maneira errada :O utilize: ----------------- !remove [comandos]'
@@ -65,23 +61,19 @@ function substituteCommand(channel, user, msg, arrQuestion, arrAnswer) {
         var splitedMsg = msg.split(' ')
         var newCommand = splitedMsg[1]
         if (splitedMsg.length > 2) {
-            var commandExist = false
             for (var i = 0; i < arrQuestion.length; i++) {
-                if (splitedMsg[1] == arrQuestion[i]) {
+                if (splitedMsg[1].toLowerCase() == arrQuestion[i]) {
                     arrQuestion = splitedMsg[1]
                     splitedMsg[0] = ' '
                     splitedMsg[1] = ' '
-                    var newAnswer = splitedMsg.join(' ').trim()
+                    var newAnswer = splitedMsg.join(' ').trim().toLowerCase()
                     arrAnswer[i] = newAnswer
-                    commandExist = true
+
+                    return `O comando ${newCommand} foi substituido! BloodTrail`
                 }
             }
-            if (commandExist === true) {
-                return `O comando ${newCommand} foi substituido! BloodTrail`
-            }
-            else {
-                return 'Não achamos nenhum comando com esse nome para substitui-lo FBtouchdown'
-            }
+            return 'Não achamos nenhum comando com esse nome para substitui-lo FBtouchdown'
+
         }
         else {
             return 'O comando está sendo usado de maneira errada :O utilize: ----------------- !substitute [comando] [reposta do comandos]'
@@ -92,4 +84,4 @@ function substituteCommand(channel, user, msg, arrQuestion, arrAnswer) {
     }
 
 }
-module.exports = { createCommand, deleteCommand, substituteCommand}
+module.exports = { createCommand, deleteCommand, substituteCommand }

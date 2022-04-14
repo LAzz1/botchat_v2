@@ -2,7 +2,7 @@ var createCommand = require('../aplications/commandBuilder')
 
 //função para validar e retornar os comandos do chat
 function validation(channel, user, msg) {
-    var {question,answers} = require(`../commands/${channel.slice(1)}/arrs.json`)
+    var { question, answers } = require(`../commands/${channel.slice(1)}/arrs.json`)
     var arrQuestion = question
     var arrAnswer = answers
     var msgPrefix = msg.split('')
