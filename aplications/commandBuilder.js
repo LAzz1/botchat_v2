@@ -16,7 +16,7 @@ function createCommand(channel, user, msg, arrQuestion, arrAnswer) {
             splitedMsg[1] = ' '
             var newAnswer = splitedMsg.join(' ').trim()
             arrAnswer[arrAnswer.length] = newAnswer
-            return `O comando ${newCommand} foi adicionado!! kennzyBlz`
+            return `O comando ${newCommand.toLowerCase()} foi adicionado!! kennzyBlz`
         }
         else {
             return 'Ops, o comando foi utilizado incorretamente NotLikeThis'
@@ -39,7 +39,7 @@ function deleteCommand(channel, user, msg, arrQuestion, arrAnswer) {
                     arrQuestion.splice(i, 1)
                     arrAnswer.splice(i, 1)
                     commandExist = true
-                    return `O comando ${splitedMsg[1]} foi removido! BloodTrail`
+                    return `O comando ${splitedMsg[1].toLowerCase()} foi removido! BloodTrail`
                 }
             }
             return 'Não achamos nenhum comando com esse nome para remove-lo FBtouchdown'
@@ -69,7 +69,7 @@ function substituteCommand(channel, user, msg, arrQuestion, arrAnswer) {
                     var newAnswer = splitedMsg.join(' ').trim().toLowerCase()
                     arrAnswer[i] = newAnswer
 
-                    return `O comando ${newCommand} foi substituido! BloodTrail`
+                    return `O comando ${newCommand.toLowerCase()} foi substituido! BloodTrail`
                 }
             }
             return 'Não achamos nenhum comando com esse nome para substitui-lo FBtouchdown'
