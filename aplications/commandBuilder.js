@@ -1,6 +1,7 @@
 //Função para criar comandos
 function createCommand(channel, user, msg, arrQuestion, arrAnswer) {
     var channelOwer = channel.slice(1)
+
     if (channelOwer == user.username) {
         var splitedMsg = msg.split(' ')
 
@@ -10,12 +11,14 @@ function createCommand(channel, user, msg, arrQuestion, arrAnswer) {
                     return 'O comando já existe!! caso queira substituir o comando digite:------- !substitute [comando] [reposta do comandos]'
                 }
             }
+
             var newCommand = splitedMsg[1]
             arrQuestion[arrQuestion.length] = newCommand.toLowerCase()
             splitedMsg[0] = ' '
             splitedMsg[1] = ' '
             var newAnswer = splitedMsg.join(' ').trim()
             arrAnswer[arrAnswer.length] = newAnswer
+
             return `O comando ${newCommand.toLowerCase()} foi adicionado!! kennzyBlz`
         }
         else {
@@ -30,6 +33,7 @@ function createCommand(channel, user, msg, arrQuestion, arrAnswer) {
 //função para deletar comandos
 function deleteCommand(channel, user, msg, arrQuestion, arrAnswer) {
     var channelOwer = channel.slice(1)
+
     if (channelOwer == user.username) {
         var splitedMsg = msg.split(' ')
 
@@ -39,6 +43,7 @@ function deleteCommand(channel, user, msg, arrQuestion, arrAnswer) {
                     arrQuestion.splice(i, 1)
                     arrAnswer.splice(i, 1)
                     commandExist = true
+
                     return `O comando ${splitedMsg[1].toLowerCase()} foi removido! BloodTrail`
                 }
             }
@@ -57,9 +62,11 @@ function deleteCommand(channel, user, msg, arrQuestion, arrAnswer) {
 //Função para substituir valores de um comando
 function substituteCommand(channel, user, msg, arrQuestion, arrAnswer) {
     var channelOwer = channel.slice(1)
+
     if (channelOwer == user.username) {
         var splitedMsg = msg.split(' ')
         var newCommand = splitedMsg[1]
+
         if (splitedMsg.length > 2) {
             for (var i = 0; i < arrQuestion.length; i++) {
                 if (splitedMsg[1].toLowerCase() == arrQuestion[i]) {

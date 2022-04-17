@@ -9,6 +9,7 @@ function validation(channel, user, msg) {
     var noPrefixMsg = msg.slice(1)
     var msgValidated = noPrefixMsg.toLowerCase()
     var splitedMsg = msg.split(' ')
+    
     if (msgPrefix[0] == '!') {
         for (var i = 0; i < arrQuestion.length; i++) {
             if (msgValidated == arrQuestion[i]) {
