@@ -19,14 +19,14 @@ function createCommand(channel, user, msg, arrQuestion, arrAnswer) {
             var newAnswer = splitedMsg.join(' ').trim()
             arrAnswer[arrAnswer.length] = newAnswer
 
-            return `O comando ${newCommand.toLowerCase()} foi adicionado!! kennzyBlz`
+            return `O comando ${newCommand.toLowerCase()} foi adicionado!! PotFriend`
         }
         else {
-            return 'Ops, o comando foi utilizado incorretamente NotLikeThis'
+            return 'Ops, o comando foi utilizado incorretamente TearGlove'
         }
     }
     else {
-        return 'Ei mocinho só o dono do canal pode adicional ou remover comandos!! kennzyCafe'
+        return 'Ei mocinho só o dono do canal pode adicional ou remover comandos!! PunOko'
     }
 }
 
@@ -55,12 +55,12 @@ function deleteCommand(channel, user, msg, arrQuestion, arrAnswer) {
         }
     }
     else {
-        return 'Ei mocinho só o dono do canal pode adicional ou remover comandos!! kennzyCafe'
+        return 'Ei mocinho só o dono do canal pode adicional ou remover comandos!! PunOko'
     }
 }
 
 //Função para substituir valores de um comando
-function substituteCommand(channel, user, msg, arrQuestion, arrAnswer) {
+function editCommand(channel, user, msg, arrQuestion, arrAnswer) {
     var channelOwer = channel.slice(1)
 
     if (channelOwer == user.username) {
@@ -76,19 +76,19 @@ function substituteCommand(channel, user, msg, arrQuestion, arrAnswer) {
                     var newAnswer = splitedMsg.join(' ').trim().toLowerCase()
                     arrAnswer[i] = newAnswer
 
-                    return `O comando ${newCommand.toLowerCase()} foi substituido! BloodTrail`
+                    return `O comando ${newCommand.toLowerCase()} foi editado! BloodTrail`
                 }
             }
-            return 'Não achamos nenhum comando com esse nome para substitui-lo FBtouchdown'
+            return 'Não achamos nenhum comando com esse nome para edita-lo FBtouchdown'
 
         }
         else {
-            return 'O comando está sendo usado de maneira errada :O utilize: ----------------- !substitute [comando] [reposta do comandos]'
+            return 'O comando está sendo usado de maneira errada :O utilize: ----------------- !edit [comando] [nova reposta do comandos]'
         }
     }
     else {
-        return 'Ei mocinho só o dono do canal pode adicional ou remover comandos!! kennzyCafe'
+        return 'Ei mocinho só o dono do canal pode adicionar, remover ou editar comandos!! PunOko'
     }
 
 }
-module.exports = { createCommand, deleteCommand, substituteCommand }
+module.exports = { createCommand, deleteCommand, editCommand }

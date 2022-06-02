@@ -1,4 +1,5 @@
 var createCommand = require('../aplications/commandBuilder')
+var sr = require('../aplications/songRequest/index')
 
 //função para validar e retornar os comandos do chat
 function validation(channel, user, msg) {
@@ -23,11 +24,14 @@ function validation(channel, user, msg) {
         else if (splitedMsg[0].toLowerCase().slice(1) == 'add') {
             return createCommand.createCommand(channel, user, msg, arrQuestion, arrAnswer)
         }
+        else if (splitedMsg[0].toLowerCase().slice(1) == 'sr') {
+            return "O comando esta em construção FutureMan"//sr.songRequest(channel, user, msg)
+        }
         else if (splitedMsg[0].toLowerCase().slice(1) == 'remove') {
             return createCommand.deleteCommand(channel, user, msg, arrQuestion, arrAnswer)
         }
-        else if (splitedMsg[0].toLowerCase().slice(1) == 'substitute') {
-            return createCommand.substituteCommand(channel, user, msg, arrQuestion, arrAnswer)
+        else if (splitedMsg[0].toLowerCase().slice(1) == 'edit') {
+            return createCommand.editCommand(channel, user, msg, arrQuestion, arrAnswer)
         }
         else {
             return 'Não conheço esse comando, foi mal BibleThump'

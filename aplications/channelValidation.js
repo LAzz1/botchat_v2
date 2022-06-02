@@ -2,7 +2,7 @@ function whichChannel(channel, user, msg) {
 
     var channelPartners = channelNameConfirm()
     var channelOwer = channel.slice(1).toLowerCase()
-    var callURL = require(`../channels/${channelOwer}`)
+    var channels = require(`../channels/${channelOwer}`)
     var partnersConfrimation = false
 
     try {
@@ -12,11 +12,11 @@ function whichChannel(channel, user, msg) {
             }
         })
         if(partnersConfrimation===true){
-            return callURL.validation(channel, user, msg)
+            return channels.validation(channel, user, msg)
         }
 
     } catch (err) {
-        return console.log('this channel is not our partner')
+        return console.log(err)
 
     }
 
